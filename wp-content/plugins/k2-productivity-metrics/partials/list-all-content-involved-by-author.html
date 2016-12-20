@@ -1,0 +1,56 @@
+<!-- Main content -->
+<div class="col-xs-12">
+
+    <!-- DIRECT CHAT PRIMARY -->
+    <div class="box box-primary direct-chat direct-chat-primary">
+        <div class="box-header with-border">
+            <h3 class="box-title"><i class="fa fa-list-alt" aria-hidden="true"></i> Listing all content that {{user.display_name}} has been involved with in any way.</h3>
+
+            <div class="box-tools pull-right">
+               <button class="btn btn-box-tool" ng-click="closeListContentInvolved();" ><i class="fa fa-times"></i></button>
+            </div>
+        </div>
+        <!-- /.box-header -->
+
+        <div class="box-content">
+            <!-- directive tabula -->
+            <table tabula="involved" url="{{urlBase}}?action=get_list_content_involved&id={{user.id}}"  number-initial="17" watcher="loadInvolvedList"   >
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th tabula-head="post_title"  title="Title" order filtering ></th>
+                    <th tabula-head="post_date"    title="Date" ></th>
+                    <th tabula-head="post_modified" title="Modified" ></th>
+                    <th tabula-head="time_in_second" title="Time spent (Hours)" ></th>
+                    <th tabula-head="estimated_cost" title="Estimated cost" ></th>
+                    <th tabula-head="number_of_page_views" title=" Number of page views"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="author in tabulas['involved'].rows " >
+                    <td><span>{{$index + 1}}</span></td>
+                    <td><a target="_blank" href="{{author.link}}">{{ author.post_title  }}</a></td>
+                    <td><span>{{ author.post_modified }}</span></td>
+                    <td><span>{{ author.post_date }}</span></td>
+                    <td><span>{{ author.time_in_second  | number:4  }}</span></td>
+                    <td><span>${{ author.estimated_cost   | number:2  }}</span></td>
+                    <td><span>{{ author.number_of_page_views }}</span></td>
+                    <td></td>
+                </tr>
+                </tbody>
+                <tfoot >
+                <tr>
+                    <th colspan="8" tabula-paginator dataset="tabulas['involved']" maxbuttons="5"   > </th>
+                </tr>
+                </tfoot>
+
+            </table>
+            <!-- /directive tabula -->
+
+        </div>
+        <!-- /.box-body -->
+    </div>
+    <!--/.direct-chat -->
+
+</div>
+<!-- /.col -->

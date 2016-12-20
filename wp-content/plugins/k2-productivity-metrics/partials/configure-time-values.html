@@ -1,0 +1,123 @@
+<!-- Main content -->
+<section class="content">
+    <div class="row" ng-hide="showConfig || showListContentByAuthor || showListContentByEditor  || showListContentInvolved || showHowLongTakesToWrite || showHowManyArticlesDay">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Author/Editor's</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+
+                    <!-- directive tabula -->
+                    <table tabula="authors" url="{{urlBase}}?action=get_authors"  number-initial="17">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th tabula-head="display_name"  title="User" order filtering ></th>
+                                <th tabula-head="user_nicename" title="Name" order filtering ></th>
+                                <th tabula-head="user_email"    title="Email" ></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="author in tabulas['authors'].rows " >
+                                <td><span>{{$index + 1}}</span></td>
+                                <td class="cursor"  ng-click="listAllContent(author.ID, author.display_name )"><span>{{ author.display_name  }}</span></td>
+                                <td><span>{{ author.user_nicename }}</span></td>
+                                <td><span>{{ author.user_email }}</span></td>
+                                <td>
+                                    <div class="cursor"  ng-click="viewUser(author.ID, author.display_name )"> <i class="fa fa-minus"></i> Configure the times value</div>
+                                    <div class="cursor"  ng-click="listAllContentAuthor(author.ID, author.display_name )"> <i class="fa fa-minus"></i> View all content authored</div>
+                                    <div class="cursor"  ng-click="listAllContentEditor(author.ID, author.display_name )"> <i class="fa fa-minus"></i> View all content edited</div>
+                                    <div class="cursor"  ng-click="listAllInvolvedContent(author.ID, author.display_name )"> <i class="fa fa-minus"></i> View all content that has been involved with in any way</div>
+                                    <div class="cursor"  ng-click="howLongTakesToWrite(author.ID, author.display_name )"> <i class="fa fa-minus"></i> See how long it takes to write articles</div>
+                                    <div class="cursor"  ng-click="howManyArticlesDay(author.ID, author.display_name )"> <i class="fa fa-minus"></i> See how many articles/day are being written</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot >
+                            <tr>
+                                <th colspan="5" tabula-paginator dataset="tabulas['authors']" maxbuttons="5"    > </th>
+                            </tr>
+                        </tfoot>
+
+                    </table>
+                    <!-- /directive tabula -->
+
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+
+    <div class="row" ng-show="showConfig">
+        <div class="box box-primary direct-chat direct-chat-primary">
+            <div class="box-header with-border">
+                <h3 class="box-title"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Configure an {{user.display_name}}'s time value  </h3>
+
+                <div class="box-tools pull-right">
+                    <button class="btn btn-box-tool" ng-click="closeWinConfig();" ><i class="fa fa-times"></i></button>
+                </div>
+            </div>
+            <div class="box-content">
+                <!-- /.box-header -->
+                <!-- form start -->
+                <form role="form">
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label for="hourly_wage">Hourly wage</label>
+                            <input type="text" class="form-control" id="hourly_wage" placeholder="Enter hourly wage" ng-model="frm.hourly_wage">
+                        </div>
+                        <div class="form-group">
+                            <label for="overtime_wage">Overtime wage</label>
+                            <input type="text" class="form-control" id="overtime_wage"  placeholder="Enter overtime wage" ng-model="frm.overtime_wage">
+                        </div>
+                        <div class="form-group">
+                            <label for="overtime_wage">Total hours per week</label>
+                            <input type="text" class="form-control" id="total_hours_per_month"  placeholder="Enter total hours per month" ng-model="frm.total_hours_per_month">
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+
+                    <div class="box-footer">
+                        <button ng-click="saveWinConfig(frm, user);" class="btn btn-primary">Save</button>
+                        <button ng-click="closeWinConfig();" class="btn btn-default">Cancel</button>
+                    </div>
+                </form>
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+
+    <div class="row" ng-show="showListContentByAuthor">
+        <ng-include src="'/wp-content/plugins/k2-productivity-metrics/partials/list-all-content-by-authored.html'"> </ng-include>
+        <!-- /.col -->
+    </div>
+    <div class="row" ng-show="showListContentByEditor">
+        <ng-include src="'/wp-content/plugins/k2-productivity-metrics/partials/list-all-content-by-edited.html'"> </ng-include>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+    <div class="row" ng-show="showListContentInvolved">
+        <ng-include src="'/wp-content/plugins/k2-productivity-metrics/partials/list-all-content-involved-by-author.html'"> </ng-include>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+    <div class="row" ng-show="showHowLongTakesToWrite">
+        <ng-include src="'/wp-content/plugins/k2-productivity-metrics/partials/how-long-takes-to-trite.html'"> </ng-include>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+    <div class="row" ng-show="showHowManyArticlesDay">
+        <ng-include src="'/wp-content/plugins/k2-productivity-metrics/partials/how-many-articles-day.html'"> </ng-include>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+<!-- /.content -->

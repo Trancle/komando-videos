@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Newsletter Signup Popup</title>
+</head>
+<body>
+
+<br>
+<div class="subscribe-popup">
+    <div class="newsletter-subscribe-box">
+        <div class="top-blue-banner">SIGN UP FOR FREE</div><div class="blue-triangle"></div><div class="close-x">X</div><br>
+        <div id="newsletter-signup-headline">LATEST TECH TRENDS<br>DELIVERED TO YOUR INBOX</div>
+        <div id="newsletter-signup-subhead">Stay up-to-date the easy way. <a href="https://club.komando.com/newsletters/subscribe">See all newsletters here.</a></div>
+        <div class="news-list-box">
+            <div class="news-list-item"><div class="news-title">Breaking News</div><div class="news-text">Important technology<br>news you care about</div></div>
+            <div class="news-list-item"><div class="news-title">Helpful Tips</div><div class="news-text">Get tips, tricks &<br>how-to steps</div></div>
+            <div class="news-list-item"><div class="news-title">Security Alert</div><div class="news-text">Get breaking<br>security alerts</div></div>
+            <div class="news-list-item"><div class="news-title">Weekend Digital Digest</div><div class="news-text">Up-to-date tech news<br>the easy way</div></div>
+            <div class="news-list-item"><div class="news-title">Kim's Insider</div><div class="news-text">Special offers and<br>shop promotions</div></div>
+        </div>
+        <div class="newsletter-subscribe-response"></div>
+        <form class="newsletter-subscribe-form" name="newsletter-subscribe-form" id="newsletter-subscribe-form" method="POST" enctype="multipart/form-data" onsubmit="newsletter_subscribe()">
+            <input class="newsletter-subscribe-email" type="text" placeholder="Enter your email here..." name="email_entry_field">
+            <button class="email-entry-button" type="submit" form="newsletter-subscribe-form">SUBSCRIBE</button>
+        </form>
+
+        <div class="newsletter-subscribe-spinner">
+            <img src="//static.komando.com/websites/common/v2/img/mini-spinner.gif" alt="Loading" title="Loading"/>
+        </div>
+    </div>
+</div>
+<br>
+
+
+</body>
+</html>

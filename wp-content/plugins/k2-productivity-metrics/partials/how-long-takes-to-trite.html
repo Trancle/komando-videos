@@ -1,0 +1,84 @@
+<!-- Main content -->
+<div class="col-xs-12">
+
+    <!-- DIRECT CHAT PRIMARY -->
+    <div class="box box-primary direct-chat direct-chat-primary">
+        <div class="box-header with-border">
+            <h3 class="box-title"><i class="fa fa-list-alt" aria-hidden="true"></i> How long {{user.display_name}} takes to write articles  </h3>
+
+            <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" ng-click="closeHowLongTakesToWrite();" ><i class="fa fa-times"></i></button>
+            </div>
+        </div>
+        <!-- /.box-header -->
+
+        <div class="box-content">
+
+
+            <!-- Small boxes (Stat box) -->
+            <div class="row">
+                <div class="col-lg-4 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-aqua">
+                        <div class="inner">
+                            <h3>{{over_last_day.over_last_7 | number:3  }}<sup style="font-size: 20px"> Hours</sup></h3>
+
+                            <p>Time spent over the last 7 days</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-calendar-o"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-4 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-green">
+                        <div class="inner">
+                            <h3>{{over_last_day.over_last_14 | number:3 }}<sup style="font-size: 20px"> Hours</sup></h3>
+
+                            <p>Time spent over the last 14 days</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-calendar"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-4 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-yellow">
+                        <div class="inner">
+                            <h3>{{over_last_day.over_last_28 | number:3 }}<sup style="font-size: 20px"> Hours</sup></h3>
+
+                            <p>Time spent over the last 28 days</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-calendar-check-o"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./col -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-xs12">
+
+                    <div class="box-header">
+                        <i class="fa fa-th"></i>
+                        <h3 class="box-title">Hours spent writing articles over the last 28 days</h3>
+                    </div>
+                    <div class="box-body border-radius-none">
+                        <nvd3 options='optionsLongTakesToWrite' data='dataLongTakesToWrite'></nvd3>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- /.box-body -->
+    </div>
+    <!--/.direct-chat -->
+
+</div>
+<!-- /.col -->
