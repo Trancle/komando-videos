@@ -1,0 +1,178 @@
+msgid ""
+msgstr "MIME-Version: 1.0\n"
+
+#. Name.
+msgid "Ultimate Bar"
+msgstr ""
+
+#. Short description.
+msgid ""
+"Ultimate Bar plugin is very helpful for attracting users attention and gaining more subscribers\n"
+"Easy and simple to use, Clean and simple design."
+msgstr ""
+
+#. Found in description list item.
+msgid "<p>Provides easy and simple user interface.</p>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<p>Shortcode Content Supported.</p>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<p>Responsive/Fluid .</p>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<p>Add custom html,styling, buttons and much more.</p>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<p>No developer logo or water mark.</p>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<p>Design your own bar according to your theme.</p>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<p>Allow you to make your custom bar.</p>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<p>Most important features included.</p>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<p>Simple and Elegant design</p>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<p>Shortcode supported (Premium version Only)</p>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<p>Can be used as subscribe form (Premium version Only)</p>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<p>You can embed videos pictures documents and alot more .(Premium version Only)</p>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<p>MailChimp Subscribe form supported (Premium version Only)</p>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<p>Email Subscribe field (Premium version Only)</p>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<p>You can display ads</p>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid ""
+"Ultimate bar plugin offers simple and user friendly user interface. Customizable bar with important features which most of the bar plugins do not offer. \n"
+"Responsive , zero coding skills required, fulfill your needs. MailChimp forms supported and integrated, can save subscribers data in database."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "You can add any type of content Ads,Images,HTML,Embed Videos or  embed contact forms of any Wordpress form plugin with simple short-code and collect leads or let people contact you. This plugin will offer end-less possibilities."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "MailChimp subscribe form let your visitors subscribe securely and you can easily access your subscribers emails."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Database Subscriber form let your visitors subscribe and lets you download the email as .csv file so that you can add it to any email marketing service without a single trouble."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong>Features : </strong>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Provides easy and simple user interface."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Shortcode Content Supported."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Responsive/Fluid ."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Add custom html,styling, buttons and much more."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "No developer logo or water mark."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Design your own bar according to your theme."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Allow you to make your custom bar."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Most important features included."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Simple and Elegant design"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Shortcode supported (Premium version Only)"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Can be used as subscribe form (Premium version Only)"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "You can embed videos pictures documents and alot more .(Premium version Only)"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "MailChimp Subscribe form supported (Premium version Only)"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Email Subscribe field (Premium version Only)"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "You can display ads"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "The best way to Increase your sales or conversions <a href=\"http://web-settler.com/ultimate-bar\"> Get Premium Version Now</a>"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Extract the zip file and just drop the contents in the wp-content/plugins/ directory of your WordPress installation and then activate the Plugin from Plugins page."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Better Design"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved UI"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Support and dashboard links added to plugins page"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Minor Bug Fixes"
+msgstr ""

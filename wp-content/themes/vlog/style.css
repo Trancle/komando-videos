@@ -1,0 +1,27 @@
+/*
+Theme Name: Vlog
+Theme URI: http://mekshq.com/theme/vlog
+Text Domain: vlog
+Author: meks
+Author URI: http://mekshq.com
+Description: A video blog / magazine WordPress theme.
+Version: 1.5
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+.vlog-site-footer {
+    float: left;
+    width: 100%;
+    background: #2c3e50;
+    color: rgba(255,255,255,.5);
+    padding: 0;
+    float: left;
+    width: 100%;
+    background: #00134b url(../img/footer-bg.jpg) no-repeat center top;
+    color: #0989ff;
+    margin: 20px 0 0 0;
+    padding: 60px 20px;
+    -webkit-box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.4);
+    font-size: 16px;
+}
