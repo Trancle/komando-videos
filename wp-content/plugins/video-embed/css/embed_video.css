@@ -1,0 +1,89 @@
+.test-you-header {
+    color: red !important;
+}
+
+.add-media-wrapper {
+    background: #ffffff;
+    position: relative;
+    overflow: hidden;
+    padding: 10px;
+    max-width: 900px;
+}
+
+.add-media-wrapper .form-wrapper {
+    border: 1px solid #E1E1E1;
+}
+
+.form-wrapper .input-table {
+    width: 100%;
+    background: #ffffff;
+}
+
+.form-wrapper .input-table tr {
+    word-wrap: break-word;
+}
+
+.form-wrapper .input-table td {
+    padding: 10px 12px;
+    border-top: 1px solid #f5f5f5;
+    border-bottom: 0 none;
+    vertical-align: top;
+}
+
+.form-wrapper .input-table td input[type='text'] {
+    width: 99.95%;
+    padding: 7px;
+    outline: none;
+}
+
+.form-wrapper .input-table td.label {
+    width: 24%;
+    background: #F9F9F9;
+    border-top: 1px solid #f0f0f0;
+    border-right: 1px solid #E1E1E1;
+    padding-bottom: 10px !important;
+    min-width: 180px;
+}
+
+.form-wrapper .input-table ul {
+    margin: 0;
+    padding: 0;
+}
+
+.form-wrapper .input-table ul.horizontal li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.form-wrapper .actions-wrapper {
+    position: relative;
+    overflow: hidden;
+    padding: 8px;
+    background: #EAF2FA;
+    border: #c7d7e2 solid 1px;
+    margin-top: -1px;
+    text-align: right;
+}
+
+.form-wrapper .actions-wrapper .btn-submit {
+    border: solid 1px #0074A2;
+    padding: 10px 15px;
+    background: #298CBA;
+    color: #ffffff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+td.label p {
+    display: block;
+    font-size: 12px;
+    line-height: 1.4em;
+    padding: 0 !important;
+    margin: 3px 0 0 !important;
+    font-style: normal;
+    line-height: 16px;
+    color: #899194;
+}
+
