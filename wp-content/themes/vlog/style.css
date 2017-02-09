@@ -17,7 +17,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
     padding: 0;
     float: left;
     width: 100%;
-    background: #00134b url(../img/footer-bg.jpg) no-repeat center top;
+   /* background: #00134b url(../../wp-content/uploads/2017/01/footer-bg1.jpg) no-repeat center top !important;*/
     color: #0989ff;
     margin: 20px 0 0 0;
     padding: 60px 20px;
