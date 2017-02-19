@@ -71,7 +71,7 @@
             if ($('.vlog-responsive-header').length) {
 
                 $('.vlog-responsive-header').css('top', vlog_admin_top_bar_height);
-
+				
             
 
                 if (vlog_admin_top_bar_height > 0 && $('#wpadminbar').css('position') == 'absolute') {
@@ -234,6 +234,115 @@
                 }
             });
         });
+		
+		$(".home-vlog-slider").each(function() {
+            var controls = $(this).closest('.vlog-module').find('.vlog-slider-controls');
+            var module_columns = $(this).closest('.vlog-module').attr('data-col');
+            var layout_columns = controls.attr('data-col');
+            var slider_items = module_columns / layout_columns;
+            var autoplay = parseInt(controls.attr('data-autoplay')) ? true : false;
+            var autoplay_time = parseInt(controls.attr('data-autoplay-time')) * 1000;
+
+			$(this).owlCarousel({
+                /*rtl: (vlog_js_settings.rtl_mode === "true"),
+                loop: true,
+                autoHeight: false,
+                autoWidth: false,
+                items: 3,
+                margin: 40,
+                nav: true,
+                center: false,
+                fluidSpeed: 100,
+                autoplay: autoplay,
+                autoplayTimeout: autoplay_time,
+                autoplayHoverPause: true,
+                navContainer: controls,
+                navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+                responsive: {
+                    0: {
+                        margin: 0,
+                        items: 1
+                    },
+                    1023: {
+                        margin: 36,
+                        items: 1
+                    }
+                }
+				*/
+				 loop:true,
+				margin:10,
+				nav:true,
+				items:3,
+				slideBy:3,
+				navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+				responsive:{
+					0:{
+						items:1
+					},
+					600:{
+						items:1
+					},
+					1000:{
+						items:1
+					}
+				}
+            });
+        });
+
+		
+		$(".post-vlog-slider").each(function() {
+            var controls = $(this).closest('.vlog-module').find('.vlog-slider-controls');
+            var module_columns = $(this).closest('.vlog-module').attr('data-col');
+            var layout_columns = controls.attr('data-col');
+            var slider_items = module_columns / layout_columns;
+            var autoplay = parseInt(controls.attr('data-autoplay')) ? true : false;
+            var autoplay_time = parseInt(controls.attr('data-autoplay-time')) * 1000;
+
+			$(this).owlCarousel({
+                /*rtl: (vlog_js_settings.rtl_mode === "true"),
+                loop: true,
+                autoHeight: false,
+                autoWidth: false,
+                margin: 10,
+                nav: true,
+                center: false,
+                fluidSpeed: 100,
+                autoplay: autoplay,
+                autoplayTimeout: autoplay_time,
+                autoplayHoverPause: true,
+				navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+               // navContainer: controls,
+                //navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+                responsive: {
+                    0: {
+                        margin: 0,
+                        items: 2
+                    },
+                    1023: {
+                        margin: 36,
+                        items: 6
+                    }
+                }
+				*/
+				 loop:true,
+				margin:10,
+				nav:true,
+				navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+				responsive:{
+					0:{
+						items:0
+					},
+					600:{
+						items:6
+					},
+					1000:{
+						items:6
+					}
+				}
+				
+            });
+        });
+
 
         /* Widget slider */
 
@@ -457,7 +566,7 @@
 
                                 return false;
                             });
-
+							
                         });
                     }
                 }

@@ -92,7 +92,7 @@ function vlog_load_js() {
 	}
 
 	//Check if is minified option active and load appropriate files
-	if(	vlog_get_option('minify_js') ){
+	if(	vlog_get_option('minify_js') && FALSE ){
 		
 		wp_enqueue_script( 'vlog-main', get_template_directory_uri() . '/assets/js/min.js', array( 'jquery' ), VLOG_THEME_VERSION, true );
 	

@@ -189,7 +189,7 @@ class Posts_Data_Table_Plugin {
         $args['content_length'] = filter_var( $args['content_length'], FILTER_VALIDATE_INT );
         $args['scroll_offset'] = filter_var( $args['scroll_offset'], FILTER_VALIDATE_INT );
          
-        $date_format = 'Y/m/d';
+        $date_format = 'Y/m/d h:i A';
         $output = $table_head = $table_body = $body_row_fmt = '';
         
         // Start building the args needed for our posts query
@@ -226,7 +226,7 @@ class Posts_Data_Table_Plugin {
                     'width' => ''
                 ), 
 				'selectinsert' => array(
-                    'heading' => __('Select insert', 'posts-data-table'),
+                    'heading' => __('Select', 'posts-data-table'),
                     'priority' => 3,
                     'width' => ''
                 ), 
@@ -332,13 +332,20 @@ class Posts_Data_Table_Plugin {
                     esc_attr( sprintf( __( 'Posts by %s' ), get_the_author() ) ),
                     get_the_author()
                 );
-                
+				//print_r($_post);
+                //print_r(wp_get_post_terms($_post->ID, 'videos_library'));die;
+				$terms = array();
+				$vl_terms = wp_get_post_terms($_post->ID, 'videos_library');
+				foreach($vl_terms as $vlt){
+				  $terms[$vlt->term_id] = $vlt->name;
+				}
+				
                 $post_data_trans = array( 
                     '{id}' => $_post->ID, 
 					'{selectinsert}' => $this->selectinsert_url($_post->ID),
                     '{title}' => $title, 
 					'{featuredimage}'=> $featuredimage,
-                    '{category}' => strip_tags(get_the_category_list( ', ', '', $_post->ID )), 
+                    '{category}' => count($terms) > 0 ? implode($terms) : "", //strip_tags(get_the_category_list( ', ', '', $_post->ID )), 
                     '{date}' => get_the_date( $date_format, $_post ), 
                     '{author}' => $author, 
                     '{content}' => $this->get_post_content( $args['content_length'] ) 
@@ -366,7 +373,7 @@ class Posts_Data_Table_Plugin {
                 $table_class .= ' nowrap';
             }
 
-            $newvideo = '<a href="' . admin_url() .'/post-new.php?post_type=videos_library" target="_top"> New Video</a>';
+            $newvideo = '<a class="newvideo" href="' . admin_url() .'/post-new.php?post_type=videos_library" target="_top"> New Video</a>';
             $output = sprintf( 
                 '<table '
                     . 'id="posts-table-%1$u" '
@@ -413,9 +420,14 @@ class Posts_Data_Table_Plugin {
     }
 	
 	public function selectinsert_url($postid){
-	  $url = $_SERVER['HTTP_REFERER'] . '&videoslibrary_postid=' . $postid;
+	  if (strpos($_SERVER['HTTP_REFERER'], '?') !== false) {
+        $url = $_SERVER['HTTP_REFERER'] . '&videoslibrary_postid=' . $postid; 
+      } else {
+	          $url = $_SERVER['HTTP_REFERER'] . '?videoslibrary_postid=' . $postid; 
+	  }
+	  
 	  $output = "";
-	  $output = '<a href="' . $url .'" target=_top>Select</a>';
+	  $output = '<a class="newvideo-select" href="' . $url .'" target=_top>Select</a>';
 	  return $output;	
 	}
     

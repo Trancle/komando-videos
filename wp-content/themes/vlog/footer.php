@@ -13,7 +13,6 @@
 						$layout = explode( "_", vlog_get_option('footer_layout') );
 						$columns = $layout[0];
 						$col_class = $layout[1];
-                                                
 					?>
 
 					<?php for($i = 1; $i <= $columns; $i++) : ?>

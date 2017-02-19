@@ -17,8 +17,8 @@ add_action('restrict_manage_posts', 'tsm_filter_post_type_by_taxonomy');
 ///////////////////Start: At admin side filter category/////////////////////
 function tsm_filter_post_type_by_taxonomy() {
 	global $typenow;
-	$post_type = 'episode_shows'; // change to your post type
-	$taxonomy  = 'episode_shows'; // change to your taxonomy
+	$post_type = 'posts'; // change to your post type
+	$taxonomy  = 'posts'; // change to your taxonomy
 	if ($typenow == $post_type) {
 		$selected      = isset($_GET['cat']) ? $_GET['cat'] : '';
 		$info_taxonomy = get_taxonomy($taxonomy);
@@ -45,13 +45,13 @@ function tsm_filter_post_type_by_taxonomy() {
 add_filter('parse_query', 'tsm_convert_id_to_term_in_query');
 function tsm_convert_id_to_term_in_query($query) {
 	global $pagenow;
-	$post_type = 'episode_shows'; // change to your post type
-	$taxonomy  = 'episode_shows'; // change to your taxonomy
+	$post_type = 'posts'; // change to your post type
+	$taxonomy  = 'posts'; // change to your taxonomy
 	$q_vars    = &$query->query_vars;
-	
+	//print_r($q_vars);
 	if ( $pagenow == 'edit.php' && isset($q_vars['post_type']) && $q_vars['post_type'] == $post_type && isset($q_vars[$taxonomy]) && is_numeric($q_vars[$taxonomy]) && $q_vars[$taxonomy] != 0 ) {
 		$term = get_term_by('id', $q_vars[$taxonomy], $taxonomy);
-		//$q_vars[$taxonomy] = $term->slug;
+		$q_vars[$taxonomy] = $term->slug;
 	}
 	
 }
@@ -134,7 +134,7 @@ function redirect_to_post_on_publish_or_save($location) {
     global $post;
     if (isset($post->post_type) && $post->post_type == 'videos_library'){
         // Always redirect to the post
-		$location = admin_url() .'post-new.php?post_type=episode_shows';
+		$location = admin_url() .'post-new.php';
     }
     return $location;
 }
@@ -222,7 +222,7 @@ class Custom_Post_Type_komondo_admin {
 	 * Set a more appropriate placeholder text for the New Book title field
 	 */
 	public function enter_title_here( $text, $post ) {
-		if ( $post->post_type == 'episode_shows' ) { add_thickbox(); };
+		if ( $post->post_type == 'post' ) { add_thickbox(); };
 		return $text;
 	}
 	
@@ -231,7 +231,7 @@ class Custom_Post_Type_komondo_admin {
 	 * Add and remove meta boxes from the edit page
 	 */
 	public function meta_boxes() {
-		add_meta_box( 'videos', __( 'Videos' ), array( &$this, 'video_meta_box' ), 'episode_shows', 'normal', 'high' );
+		add_meta_box( 'videos', __( 'Videos' ), array( &$this, 'video_meta_box' ), 'post', 'normal', 'high' );
 	}
 	
 	
@@ -254,17 +254,20 @@ class Custom_Post_Type_komondo_admin {
 		
 		<input type="hidden" name="videoslibrary_postid" id="videoslibrary_postid" value="<?php echo $postdata->ID; ?>" />
 		<p>
-			<a title="<?php esc_attr_e( 'Add Video' ) ?>"  id="VideoLibraryUpdate" href="<?php echo admin_url(); ?>/admin.php?page=admin-videos-library-page.php&TB_iframe=true" class="thickbox" style="<?php echo (  $postdata->ID ? 'display:none;' : '' ); ?>"><?php _e( 'Add Video' ) ?></a>
+			<a class="" title="<?php esc_attr_e( 'Add Video' ) ?>"  id="VideoLibraryUpdate" href="<?php echo admin_url(); ?>/admin.php?page=admin-videos-library-page.php&TB_iframe=true" class="thickbox" style="<?php echo (  $postdata->ID ? 'display:none;' : '' ); ?>"><?php _e( 'Add Video' ) ?></a>
 			
-			<a title="<?php esc_attr_e( 'Update Video' ) ?>" class="thickbox" href="<?php echo admin_url(); ?>/admin.php?page=admin-videos-library-page.php&TB_iframe=true" id="update-video" style="<?php echo ( ! $postdata->ID ? 'display:none;' : '' ); ?>"><?php _e( 'Update Video' ) ?></a>
+			<a class="" title="<?php esc_attr_e( 'Update Video' ) ?>" class="thickbox" href="<?php echo admin_url(); ?>/admin.php?page=admin-videos-library-page.php&TB_iframe=true" id="update-video" style="<?php echo ( ! $postdata->ID ? 'display:none;' : '' ); ?>"><?php _e( 'Update Video' ) ?></a>
 		</p>
 		<?php 
 		      $isshow_popup=false;
-		      if((isset($_REQUEST['post_type']) && $_REQUEST['post_type'] == 'episode_shows') && !(isset($_REQUEST['videoslibrary_postid']) && $_REQUEST['videoslibrary_postid'] >0)){
+		      global $pagenow;
+		
+		      if ( $pagenow == 'post-new.php' && (!(isset($_REQUEST['videoslibrary_postid']) && $_REQUEST['videoslibrary_postid'] > 0))){
 		        $isshow_popup=true;
 		      } else if(!(isset($_REQUEST['post']) && $_REQUEST['post'] > 0)){
 		        $isshow_popup=false;
 		      }
+			 // var_dump(( $pagenow == 'post-new.php' && (!(isset($_REQUEST['videoslibrary_postid']) && $_REQUEST['videoslibrary_postid'] > 0))));die;
 			  
 		?>
 		<?php if($isshow_popup){?>
@@ -294,7 +297,7 @@ class Custom_Post_Type_komondo_admin {
 			
 			$( window ).load(function() {
 			   $('#acf-field-videos').val($('#videoslibrary_postid').val());
-			   //$('#acf-videos').hide();
+			   $('#acf-videos').hide();
 			   //alert($('#acf-field-videos').val());
 				return false;
 			});

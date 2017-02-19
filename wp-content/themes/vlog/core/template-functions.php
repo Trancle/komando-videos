@@ -93,7 +93,7 @@ if ( !function_exists( 'vlog_get_featured_image' ) ):
 						return $def_img;
 					}
 				}
-
+				return wp_get_attachment_image(887,$size);
 				return '<img src="'.esc_attr( $placeholder ).'" alt="'.esc_attr( get_the_title( $post_id ) ).'" />';
 			}
 
