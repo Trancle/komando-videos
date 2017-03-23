@@ -1,0 +1,168 @@
+@font-face {
+    font-family: 'ProximaNovaBold';
+    src: url('fonts/ProximaNovaBold.eot');
+    src: url('fonts/ProximaNovaBold.eot') format('embedded-opentype'),
+         url('fonts/ProximaNovaBold.woff2') format('woff2'),
+         url('fonts/ProximaNovaBold.woff') format('woff'),
+         url('fonts/ProximaNovaBold.ttf') format('truetype'),
+         url('fonts/ProximaNovaBold.svg#ProximaNovaBold') format('svg');
+}
+
+/*** Extra Bold****/
+@font-face {
+    font-family: 'ProximaNovaExtrabold';
+    src: url('fonts/ProximaNovaExtrabold.eot');
+    src: url('fonts/ProximaNovaExtrabold.eot') format('embedded-opentype'),
+         url('fonts/ProximaNovaExtrabold.woff2') format('woff2'),
+         url('fonts/ProximaNovaExtrabold.woff') format('woff'),
+         url('fonts/ProximaNovaExtrabold.ttf') format('truetype'),
+         url('fonts/ProximaNovaExtrabold.svg#ProximaNovaExtrabold') format('svg');
+}
+
+@font-face {
+    font-family: 'ProximaNovaAltBlack';
+    src: url('fonts/ProximaNovaAltBlack.eot');
+    src: url('fonts/ProximaNovaAltBlack.eot') format('embedded-opentype'),
+         url('fonts/ProximaNovaAltBlack.woff2') format('woff2'),
+         url('fonts/ProximaNovaAltBlack.woff') format('woff'),
+         url('fonts/ProximaNovaAltBlack.ttf') format('truetype'),
+         url('fonts/ProximaNovaAltBlack.svg#ProximaNovaAltBlack') format('svg');
+}
+
+@font-face {
+    font-family: 'ProximaNovaAltBold';
+    src: url('fonts/ProximaNovaAltBold.eot');
+    src: url('fonts/ProximaNovaAltBold.eot') format('embedded-opentype'),
+         url('fonts/ProximaNovaAltBold.woff2') format('woff2'),
+         url('fonts/ProximaNovaAltBold.woff') format('woff'),
+         url('fonts/ProximaNovaAltBold.ttf') format('truetype'),
+         url('fonts/ProximaNovaAltBold.svg#ProximaNovaAltBold') format('svg');
+}
+
+@font-face {
+    font-family: 'ProximaNovaAltSemibold';
+    src: url('fonts/ProximaNovaAltSemibold.eot');
+    src: url('fonts/ProximaNovaAltSemibold.eot') format('embedded-opentype'),
+         url('fonts/ProximaNovaAltSemibold.woff2') format('woff2'),
+         url('fonts/ProximaNovaAltSemibold.woff') format('woff'),
+         url('fonts/ProximaNovaAltSemibold.ttf') format('truetype'),
+         url('fonts/ProximaNovaAltSemibold.svg#ProximaNovaAltSemibold') format('svg');
+}
+
+@font-face {
+    font-family: 'ProximaNovaScOsfLight';
+    src: url('fonts/ProximaNovaScOsfLight.eot');
+    src: url('fonts/ProximaNovaScOsfLight.eot') format('embedded-opentype'),
+         url('fonts/ProximaNovaScOsfLight.woff2') format('woff2'),
+         url('fonts/ProximaNovaScOsfLight.woff') format('woff'),
+         url('fonts/ProximaNovaScOsfLight.ttf') format('truetype'),
+         url('fonts/ProximaNovaScOsfLight.svg#ProximaNovaScOsfLight') format('svg');
+}
+
+@font-face {
+    font-family: 'ProximaNovaScOsfExtrabold';
+    src: url('fonts/ProximaNovaScOsfExtrabold.eot');
+    src: url('fonts/ProximaNovaScOsfExtrabold.eot') format('embedded-opentype'),
+         url('fonts/ProximaNovaScOsfExtrabold.woff2') format('woff2'),
+         url('fonts/ProximaNovaScOsfExtrabold.woff') format('woff'),
+         url('fonts/ProximaNovaScOsfExtrabold.ttf') format('truetype'),
+         url('fonts/ProximaNovaScOsfExtrabold.svg#ProximaNovaScOsfExtrabold') format('svg');
+}
+
+@font-face {
+    font-family: 'ProximaNovaAltLight';
+    src: url('fonts/ProximaNovaAltLight.eot');
+    src: url('fonts/ProximaNovaAltLight.eot') format('embedded-opentype'),
+         url('fonts/ProximaNovaAltLight.woff2') format('woff2'),
+         url('fonts/ProximaNovaAltLight.woff') format('woff'),
+         url('fonts/ProximaNovaAltLight.ttf') format('truetype'),
+         url('fonts/ProximaNovaAltLight.svg#ProximaNovaAltLight') format('svg');
+}
+
+@font-face {
+    font-family: 'ProximaNovaAltExtrabold';
+    src: url('fonts/ProximaNovaAltExtrabold.eot');
+    src: url('fonts/ProximaNovaAltExtrabold.eot') format('embedded-opentype'),
+         url('fonts/ProximaNovaAltExtrabold.woff2') format('woff2'),
+         url('fonts/ProximaNovaAltExtrabold.woff') format('woff'),
+         url('fonts/ProximaNovaAltExtrabold.ttf') format('truetype'),
+         url('fonts/ProximaNovaAltExtrabold.svg#ProximaNovaAltExtrabold') format('svg');
+}
+
+@font-face {
+    font-family: 'ProximaNovaScOsfBlack';
+    src: url('fonts/ProximaNovaScOsfBlack.eot');
+    src: url('fonts/ProximaNovaScOsfBlack.eot') format('embedded-opentype'),
+         url('fonts/ProximaNovaScOsfBlack.woff2') format('woff2'),
+         url('fonts/ProximaNovaScOsfBlack.woff') format('woff'),
+         url('fonts/ProximaNovaScOsfBlack.ttf') format('truetype'),
+         url('fonts/ProximaNovaScOsfBlack.svg#ProximaNovaScOsfBlack') format('svg');
+}
+
+@font-face {
+    font-family: 'ProximaNovaLight';
+    src: url('fonts/ProximaNovaLight.eot');
+    src: url('fonts/ProximaNovaLight.eot') format('embedded-opentype'),
+         url('fonts/ProximaNovaLight.woff2') format('woff2'),
+         url('fonts/ProximaNovaLight.woff') format('woff'),
+         url('fonts/ProximaNovaLight.ttf') format('truetype'),
+         url('fonts/ProximaNovaLight.svg#ProximaNovaLight') format('svg');
+}
+
+@font-face {
+    font-family: 'ProximaNovaScOsfSemibold';
+    src: url('fonts/ProximaNovaScOsfSemibold.eot');
+    src: url('fonts/ProximaNovaScOsfSemibold.eot') format('embedded-opentype'),
+         url('fonts/ProximaNovaScOsfSemibold.woff2') format('woff2'),
+         url('fonts/ProximaNovaScOsfSemibold.woff') format('woff'),
+         url('fonts/ProximaNovaScOsfSemibold.ttf') format('truetype'),
+         url('fonts/ProximaNovaScOsfSemibold.svg#ProximaNovaScOsfSemibold') format('svg');
+}
+
+@font-face {
+    font-family: 'ProximaNovaScOsfBold';
+    src: url('fonts/ProximaNovaScOsfBold.eot');
+    src: url('fonts/ProximaNovaScOsfBold.eot') format('embedded-opentype'),
+         url('fonts/ProximaNovaScOsfBold.woff2') format('woff2'),
+         url('fonts/ProximaNovaScOsfBold.woff') format('woff'),
+         url('fonts/ProximaNovaScOsfBold.ttf') format('truetype'),
+         url('fonts/ProximaNovaScOsfBold.svg#ProximaNovaScOsfBold') format('svg');
+}
+
+@font-face {
+    font-family: 'ProximaNovaBlack';
+    src: url('fonts/ProximaNovaBlack.eot');
+    src: url('fonts/ProximaNovaBlack.eot') format('embedded-opentype'),
+         url('fonts/ProximaNovaBlack.woff2') format('woff2'),
+         url('fonts/ProximaNovaBlack.woff') format('woff'),
+         url('fonts/ProximaNovaBlack.ttf') format('truetype'),
+         url('fonts/ProximaNovaBlack.svg#ProximaNovaBlack') format('svg');
+}
+
+@font-face {
+    font-family: 'ProximaNovaSemibold';
+    src: url('fonts/ProximaNovaSemibold.eot');
+    src: url('fonts/ProximaNovaSemibold.eot') format('embedded-opentype'),
+         url('fonts/ProximaNovaSemibold.woff2') format('woff2'),
+         url('fonts/ProximaNovaSemibold.woff') format('woff'),
+         url('fonts/ProximaNovaSemibold.ttf') format('truetype'),
+         url('fonts/ProximaNovaSemibold.svg#ProximaNovaSemibold') format('svg');
+}
+
+@font-face {
+    font-family: 'ProximaNovaReg';
+    src: url('fonts/ProximaNova-RegWeb.eot');
+    src: url('fonts/ProximaNova-RegWeb.eot') format('embedded-opentype'),
+         url('fonts/ProximaNova-RegWeb.woff2') format('woff2'),
+         url('fonts/ProximaNova-RegWeb.woff') format('woff'),
+         url('fonts/ProximaNova-RegWeb.ttf') format('truetype'),
+         url('fonts/ProximaNova-RegWeb.svg#ProximaNovaSemibold') format('svg');
+}
+
+@font-face { font-family: 'ProximaNovaReg'; 
+src: url("https://static-assets-prod01.komando.com/v2/201702141900/front/fonts/ProximaNova-RegWeb.eot"); 
+src: url("https://static-assets-prod01.komando.com/v2/201702141900/front/fonts/ProximaNova-RegWeb.eot") format("embedded-opentype"), url("https://static-assets-prod01.komando.com/v2/201702141900/front/fonts/ProximaNova-RegWeb.woff") format("woff"); font-weight: normal; font-style: normal }
+
+@font-face { font-family: 'ProximaNovaSbold'; 
+src: url("https://static-assets-prod01.komando.com/v2/201702141900/front/fonts/ProximaNova-SboldWeb.eot"); 
+src: url("https://static-assets-prod01.komando.com/v2/201702141900/front/fonts/ProximaNova-SboldWeb.eot") format("embedded-opentype"), url("https://static-assets-prod01.komando.com/v2/201702141900/front/fonts/ProximaNova-SboldWeb.woff") format("woff"); font-weight: normal; font-style: normal }

@@ -1,0 +1,28 @@
+/*
+Author:         Sanjay Kumar
+Number:         9555367062
+*/
+
+@media screen and (max-width:1023px){
+	.header-fix{display:none;}
+	
+	}
+
+@media screen and (max-width:767px){
+	body{margin-top:22px;}
+	.vlog-site-content{margin-top:22px;}
+	.vlog-featured-slider .fa.fa-angle-left, .vlog-featured-slider .fa.fa-angle-right{font-size:40px!important; line-height:36px;}
+	#footer .footer-colum{min-height:100px;}
+	#nav_menu-3 h4, #nav_menu-5 h4{display:none;}
+	#footer .widget-title{margin:30px 0 4px 0;}
+	#footer .container, #header .container, .vlog-top-bar .container{width:100%}
+	#footer .footer-colum{width:100%;}
+	.komondo-bottom-text{width:100%; text-align:left; padding:10px;}
+	.vlog-copyright .aligncenter,.vlog-copyright .alignnone{margin: 0 auto 10px auto;padding-left: 0px;}
+	.vlog-copyright, .vlog-site-footer .widget:first-child{margin-top:0px;}	
+	.owl-next{right:0px}
+	.owl-prev{left:0px;}
+	.home-vlog-slider .fa.fa-angle-left, .home-vlog-slider .fa.fa-angle-right{font-size:30px}
+	.play{top:15%; left:37%;}
+	.play a,.play a:hover{transform:scaale(0.5);}
+	}

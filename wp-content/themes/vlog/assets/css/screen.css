@@ -1,0 +1,38 @@
+/*
+Author:         Sanjay Kumar
+Number:         9555367062
+*/
+
+@media screen and (max-width:1023px){
+	.header-fix{display:none;}
+	
+	}
+
+@media screen and (max-width:990px){
+	body{margin-top:22px;}
+	.vlog-site-content{margin-top:22px;}
+	.vlog-featured-slider .fa.fa-angle-left, .vlog-featured-slider .fa.fa-angle-right{font-size:40px!important; line-height:36px;}
+	#footer .footer-colum{min-height:100px;}
+	#nav_menu-3 h4, #nav_menu-5 h4{display:none;}
+	#footer .widget-title{margin:30px 0 4px 0;}
+	#footer .container, #header .container, .vlog-top-bar .container{width:100%}
+	#footer .footer-colum{width:100%;}
+	.komondo-bottom-text{width:100%; text-align:left; padding:10px;}
+	.vlog-copyright .aligncenter,.vlog-copyright .alignnone{margin: 0 auto 10px auto;padding-left: 0px;}
+	.vlog-copyright, .vlog-site-footer .widget:first-child{margin-top:0px;}	
+	.owl-next{right:0px}
+	.owl-prev{left:0px;}
+	.home-vlog-slider .fa.fa-angle-left, .home-vlog-slider .fa.fa-angle-right{font-size:30px}
+	.play{top:15%; left:37%;}
+	.vlog-slot-l{background: #000; height: 40px; float:left; width:100%; position:static; padding:0 17px;}
+	#menu-item-528 i{display:none;}
+	#menu-top-bar li{display:inline-block; float:left;}
+	.vlog-responsive-header{height:106px;}
+	.kimmenu span{color:#fff;}
+	.vlog-top-bar, .vlog-top-bar .sub-menu{display:block}
+	.vlog-top-bar .container{padding:0px;}
+	.dl-menuwrapper button.dl-trigger{left:auto;right:11px; top:-10px;}
+	.vlog-site-branding.mini{position:relative; top:0px; margin-top:-6px; z-index:10000; left:-40px}
+	.site-title img{width:auto!important; max-height:100%;}
+	.bottom-bar{float:left; width:100%;background:#001b68 url(http://dev-web.in/komandonew/wp-content/uploads/2017/01/header-bg-3.jpg) -728px center no-repeat;}
+	}
