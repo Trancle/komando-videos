@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Category Order and Taxonomy Terms Order
+Plugin Name: Komando Override: Category Order and Taxonomy Terms Order
 Plugin URI: http://www.nsp-code.com
 Description: Category Order and Taxonomy Terms Order
 Version: 1.4.9

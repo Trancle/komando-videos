@@ -35,7 +35,7 @@
             ?>
             <div class="wrap">
                 <div class="icon32" id="icon-edit"><br></div>
-                <h2><?php _e( "Taxonomy Order", 'taxonomy-terms-order' ) ?></h2>
+                <h2><?php _e( "Order", 'taxonomy-terms-order' ) ?></h2>
 
                 <?php tto_info_box() ?>
                 
