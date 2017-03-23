@@ -1,7 +1,4 @@
 <?php
-/** Enable W3 Total Cache */
-define('WP_CACHE', true); // Added by W3 Total Cache
-
 /**
  * The base configuration for WordPress
  *
@@ -21,12 +18,13 @@ define('WP_CACHE', true); // Added by W3 Total Cache
  * @package WordPress
  */
 
+
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'komando_new');
+define('DB_NAME', 'komandov3');
 
 /** MySQL database username */
-define('DB_USER', 'root');
+define('DB_USER', 'root'); 
 
 /** MySQL database password */
 define('DB_PASSWORD', 'root');
@@ -66,7 +64,7 @@ define('NONCE_SALT', 'i_}XCTM+oG]B_ww;Vw^[kaSp|>P<[M;zaCKLcrlQW%EVV-sI<?GahNEey_
  * You can have multiple installations in one database if you give each
  * a unique prefix. Only numbers, letters, and underscores please!
  */
-$table_prefix = 'wp_doil_';
+$table_prefix = 'wp_';
 
 /**
  * For developers: WordPress debugging mode.
@@ -81,6 +79,28 @@ $table_prefix = 'wp_doil_';
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
 define('WP_DEBUG', false);
+////////////////////Custom////////////////////////////
+define('WP_MEMORY_LIMIT', '256M');
+
+//Custom Configuration
+define('WP_DEBUG', false);
+
+/* AutoSaving and Revisions */
+
+define('AUTOSAVE_INTERVAL', 86400 ); // autosave 1x per year
+define('EMPTY_TRASH_DAYS',  0 ); // zero days
+define('WP_POST_REVISIONS', false ); // no revisions
+
+/* That's all, stop editing! Happy blogging. */
+
+$subfolder = '/komandov3/';
+
+define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST'] . $subfolder);
+define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST'] . $subfolder);
+define('DOMAIN_CURRENT_SITE', $_SERVER['HTTP_HOST'] . $subfolder); 
+define('SUB_DIR','');
+define('HTTP_STR','http://');
+//////////////////////Custom//////////////////////////
 
 /* That's all, stop editing! Happy blogging. */
 
