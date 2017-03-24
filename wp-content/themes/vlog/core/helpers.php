@@ -1393,10 +1393,35 @@ if ( !function_exists( 'vlog_get_related_posts' ) ):
 			$post_id = get_the_ID();
 		}
 
+		$category_detail=get_the_category($post_id);//$post->ID
+		foreach($category_detail as $cd){
+			$category =  $cd;
+		}
+	
+	    $args['post_type'] = 'post';
+
+		$num_posts = 100;
+		$args['posts_per_page'] = $num_posts;
+		$args['post_status'] = 'publish';
+		
+		$args['cat'] = $category->term_id;
+
+
+		$posts_slider = new WP_Query( $args );
+		
+		
+		
+		$duplicate = array(); 
+		foreach($posts_slider->posts as $post){
+			$duplicate[] = $post->ID;
+		}
+		$duplicate[] = $post_id;
+		
+		
 		$args['post_type'] = 'post';
 
 		//Exclude current post from query
-		$args['post__not_in'] = array( $post_id );
+		$args['post__not_in'] = $duplicate;
 
 		//If previuos next posts active exclude them too
 		if ( vlog_get_option( 'single_prevnext' ) || vlog_get_option( 'single_cover_prevnext' ) ) {
@@ -1812,17 +1837,18 @@ if ( !function_exists( 'vlog_get_home_category' ) ):
 				unset($posts[$key2]);
 				if($key2==2)break;
 			}
-			$index++;  
+			//$index++;  
 
 			$counter=1;
 
-			foreach($posts as $key => $post){
+			/*foreach($posts as $key => $post){
 				$carousel_all[$index][] = $post;
 				if($counter%6 == 0){
 				   $index++;
 				}
 				$counter++;
-			}
+			}*/
+			$carousel_all = array_chunk($posts, 6);
 			$carousel[$cat->term_id]['catname'] = $cat->name;
 			$carousel[$cat->term_id]['catdetail'] = $category_home;
 			$carousel[$cat->term_id]['rest'] = $carousel_all;
@@ -1832,6 +1858,91 @@ if ( !function_exists( 'vlog_get_home_category' ) ):
 		
 	}
 endif;
+
+///////////////////////////////////////////////////////
+
+/**
+ * Get related posts for particular post
+ *
+ * @param int     $post_id
+ * @return object WP_Query
+ * @since  1.0
+ */
+
+if ( !function_exists( 'vlog_get_posts_slider' ) ):
+	function vlog_get_posts_slider( $post_id = false,  $category) {
+
+		if ( empty( $post_id ) ) {
+			$post_id = get_the_ID();
+		}
+
+		$args['post_type'] = 'post';
+
+		//Exclude current post from query
+		$args['post__not_in'] = array( $post_id );
+		$num_posts = 20;
+		$args['posts_per_page'] = $num_posts;
+		
+		$args['cat'] = $category->term_id;
+		$args['post_status'] = 'publish';
+
+		$posts_slider = new WP_Query( $args );
+
+		return $posts_slider;
+	}
+endif;
+
+if ( !function_exists( 'vlog_get_posts_more_videos' ) ):
+	function vlog_get_posts_more_videos($cat) {
+		$category_detail=get_the_category(get_the_ID());//$post->ID
+		foreach($category_detail as $cd){
+			$category =  $cd;
+		}
+	
+	     $args['post_type'] = 'post';
+
+		//Exclude current post from query
+		//$args['post__not_in'] = array( $post_id );
+		$num_posts = 8;
+		$args['posts_per_page'] = $num_posts;
+		$args['post_status'] = 'publish';
+		
+		$args['cat'] = $category->term_id;
+
+
+		$posts_slider = new WP_Query( $args );
+		
+		
+		
+		$duplicate = array(); 
+		foreach($posts_slider->posts as $post){
+			$duplicate[] = $post->ID;
+		}
+		$duplicate[] = get_the_ID();
+
+		
+		//More videos
+		wp_reset_postdata();
+		$args1['post_type'] = 'post';
+
+		//Exclude current post from query
+		$args1['post__not_in'] = $duplicate;
+		$num_posts = 8;
+		$args1['posts_per_page'] = $num_posts;
+		$args1['post_status'] = 'publish';
+		
+		$args1['cat'] = $cat->term_id;
+
+
+		$posts_slider1 = new WP_Query( $args1 );
+
+		return $posts_slider1;
+		
+	}
+endif;
+
+
+
 
 
 

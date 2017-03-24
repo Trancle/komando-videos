@@ -5,35 +5,103 @@
 					<?php echo $breadcrumbs; ?>
 				<?php endif; ?>
 
-			<div class="row1" >
-				<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 post-single-video-section"> 
+			<div class="row" >
+				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 post-single-video-section1"> 
 					<div class="entry-video">
 						<div class="video-sections">
 							<?php 
-								$post_meta = get_post_meta($post->ID); ?>
-							<?php if(isset($post_meta) && isset($post_meta['videos'][0])):
-								$post_videos = get_post((int)$post_meta['videos'][0]);
-								$post_videos_meta = get_post_meta((int)$post_videos->ID);
+								$post_meta = komaindo_front_get_videofulldetails($post->ID); 
+								$post_videos_meta = $post_meta['video'];
+								?>
+							<?php if(isset($post_meta['video']['vl_video_type'][0]) && $post_meta['video']['vl_video_type'][0] == 'youtube'){
 							?>				
-							
-								<?php if(isset($post_videos_meta) && ($post_videos_meta['vl_video_type'][0] == 'youtube' || $post_videos_meta['vl_video_type'][0] == 'vimeo123')): ?>
-									<?php //echo do_shortcode('[embed width="100%" height="490"]' . str_replace('watch?v=','embed/',$post_videos_meta['vl_url'][0]) . '[/embed]'); https://www.youtube.com/watch?v=KBFkr277f9k ?>
-								<?php 
-								
-									preg_match("/youtube\.com\/(v\/|watch\?v=)([\w\-]+)/", $post_videos_meta['vl_url'][0], $match_id);
-									$yt_id = $match_id[2]; 
 	
+									<?php 
+									
+										preg_match("/youtube\.com\/(v\/|watch\?v=)([\w\-]+)/", $post_videos_meta['vl_url'][0], $match_id);
+										$yt_id = $match_id[2]; 
+		
+									
+									    $videos_library_attr = $post_meta['video'];
+										$youtube_attr = array();
+										
+										//related
+										if(isset($videos_library_attr['vl_show_related_videos'][0]) && $videos_library_attr['vl_show_related_videos'][0] == 1){
+											$youtube_attr['rel'] = 1;
+										} else {
+										   $youtube_attr['rel'] = 0;
+										}
+										
+										//showinfo
+										if(isset($videos_library_attr['vl_show_video_information'][0]) && $videos_library_attr['vl_show_video_information'][0] == 1){
+											$youtube_attr['showinfo'] = 1;
+										} else {
+										   $youtube_attr['showinfo'] = 0;
+										}
+										//start offset 
+										if(isset($videos_library_attr['vl_start_offset_in_seconds'][0]) && $videos_library_attr['vl_start_offset_in_seconds'][0] > 0){
+											$youtube_attr['start'] = $videos_library_attr['vl_start_offset_in_seconds'][0];
+										} else {
+										    $youtube_attr['start'] = 0;
+										}
+										
+										if(isset($videos_library_attr['vl_show_video_annotations']) && $videos_library_attr['vl_show_video_annotations'] == 1){
+											$youtube_attr['iv_load_policy'] = 1;
+										} else {
+										   $youtube_attr['iv_load_policy'] = 3;
+										}
+										
+										if(isset($videos_library_attr['vl_display_controls']) && $videos_library_attr['vl_display_controls'] == 1){
+											$youtube_attr['controls'] = 1;
+										} else {
+										   $youtube_attr['controls'] = 0;
+										}
+										
+										if(isset($videos_library_attr['vl_display_control_caption']) && $videos_library_attr['vl_display_control_caption'] == 1){
+											$youtube_attr['cc_load_policy'] = 1;
+										} else {
+										   $youtube_attr['cc_load_policy'] = 0;
+										}
+										
+										//loop
+										if(isset($videos_library_attr['vl_loop']) && $videos_library_attr['vl_loop'] == 1){
+											$youtube_attr['loop'] = 1;
+										} else {
+										   $youtube_attr['loop'] = 0;
+										}
+										
+										//loop
+										if(isset($videos_library_attr['vl_modest_branding_hide_youtube_logo']) && $videos_library_attr['vl_modest_branding_hide_youtube_logo'] == 1){
+											$youtube_attr['modestbranding'] = 0;
+										} else {
+										   $youtube_attr['modestbranding'] = 1;
+										}
+										
+										$youtubeurl="https://www.youtube.com/embed/";
+										$youtubeurl .= $yt_id . '?autoplay=1&' ;
+
+										$youtube_arr = array();
+										foreach($youtube_attr as $key => $val){
+										  $youtube_arr[] = $key . '=' . $val;
+										}
+										$youtubeurl .= implode('&',$youtube_arr);
+										
+										
+										//$url .= "?autoplay=1&disablekb=1&modestbranding=1&playsinline=1"; ?>
+										<iframe width="100%"  src="<?php echo $youtubeurl; ?>" frameborder="0" allowfullscreen></iframe>
+										<?php //echo mediaelement_youtube($youtubeurl);?>
 								
-									$url="https://www.youtube.com/embed/";
-									$url .= $yt_id;
-									$url .= "?autoplay=1&disablekb=1&modestbranding=1&playsinline=1"; ?>
-								<iframe width="100%"  src="<?php echo $url; ?>" frameborder="0" allowfullscreen></iframe>
-								<?php else: ?>
 								
-									<?php  //HTML
-									//echo do_shortcode('[embed width="100%" height="490"]' . $post_videos_meta['vl_url'][0] . '[/embed]'); ?>
-								<?php endif; ?>
-							<?php endif; ?>
+								<?php } else if(isset($post_meta['video']['vl_video_type'][0]) && $post_meta['video']['vl_video_type'][0] == 'vimeo') { ?>
+									<?php  echo mediaelement_vimeo($post_videos_meta['vl_url'][0]); ?>
+								<?php } else if(isset($post_meta['video']['vl_video_type'][0]) && $post_meta['video']['vl_video_type'][0] == 'html'){ ?>
+										<?php 
+										
+											$htmlmp4url = wp_get_attachment_url($post_videos_meta['vl_upload_video'][0]); 
+											echo mediaelement_mp4($htmlmp4url);?>
+								
+								<?php } ?>
+							
 							
 						</div>
 					</div>
@@ -43,7 +111,7 @@
 
 
 				</div>
-				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 					<div class="post-content"> 
 						<div class="entry-title post-title">
 							 <?php the_title( sprintf( '<h2 class="entry-title h1">', esc_url( get_permalink() ) ), '</h2>' ); ?>

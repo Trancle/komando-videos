@@ -1,10 +1,10 @@
 <?php 
-	$post =  get_post(get_the_ID());
+	
 	$category_detail=get_the_category(get_the_ID());//$post->ID
-	$catid = 0;
 	foreach($category_detail as $cd){
 		$category =  $cd;
 	}
+	/*
 	
 	
 	$args = array(
@@ -25,13 +25,16 @@
 		'author_name'	   => '',
 		'post_status'      => 'publish',
 		'suppress_filters' => true,
+		'post__not_in' => array($post->ID),
 
 	  );
 	$posts = get_posts($args); 
 	  
-
+*/
 	?>
+<?php $posts_slider = vlog_get_posts_slider(get_the_ID(),$category); ?>
 
+<?php if( $posts_slider->have_posts() ) : ?>
 <div class="vlog-section post-slider">  
 	<div class="vlog-content">  
 		<div class="carousel-sec">
@@ -41,19 +44,24 @@
 				</div>
 			</div>
 			<div class="post-vlog-slider ">
-			    <?php foreach($posts as $catkey1 => $slide ): ?>
+			    <?php //foreach($posts as $catkey1 => $slide ): ?>
+				<?php while ( $posts_slider->have_posts() ) : $posts_slider->the_post(); ?>
 					<div class="items">
 					    <div class="entry-image">
-							<a href="<?php echo esc_url( get_permalink($slide->ID) ); ?>" title="<?php echo esc_attr( get_the_title() ); ?>">
-								<?php echo vlog_get_featured_image('vlog-lay-g', $slide->ID); ?>
+							<a href="<?php echo esc_url( get_permalink($posts_slider->ID) ); ?>" title="<?php echo esc_attr( get_the_title() ); ?>">
+								<?php echo vlog_get_featured_image('vlog-lay-g', $posts_slider->ID); ?>
 								<div class="entry-header">
-									<h2 class="entry-title h6"><?php echo esc_attr( get_the_title($slide->ID) ); ?></h2>
+									<h2 class="entry-title h6"><?php echo esc_attr( get_the_title($posts_slider->ID) ); ?></h2>
 								</div>
 							</a>
 				        </div>
 					</div>
-				<?php endforeach; ?>
+				<?php //endforeach; ?>
+				<?php endwhile; ?>
 			</div>
 		</div>
 	</div>
 </div>
+<?php endif; ?>
+
+<?php wp_reset_postdata(); ?>
